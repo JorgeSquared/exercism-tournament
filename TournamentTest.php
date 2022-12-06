@@ -40,6 +40,7 @@ class TournamentTest extends PHPUnit\Framework\TestCase
 
     public function testHeaderOnlyNoTeams(): void
     {
+        $this->markTestSkipped();
         $scores   = '';
         $expected = 'Team                           | MP |  W |  D |  L |  P';
         $this->assertEquals($expected, $this->tournament->tally($scores));
@@ -48,7 +49,7 @@ class TournamentTest extends PHPUnit\Framework\TestCase
 
     public function testWinIsThreePointsLossIsZeroPoints(): void
     {
-        $this->markTestSkipped();
+        //$this->markTestSkipped();
         $scores = 'Allegoric Alaskans;Blithering Badgers;win';
         $expected =
             "Team                           | MP |  W |  D |  L |  P\n" .
